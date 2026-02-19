@@ -1,0 +1,34 @@
+:root {
+    // BACKGROUND
+    --main-bg-color: #0a0a0f;
+    --bg-tasks-list-color: #121218;
+    --bg-tasks-titleAndActive-item-color: #1A1A24;
+    --bg-task-info-color: #1C1814;
+    --border-color: #2A2A3A;
+
+    // STATUS
+    --hover-color: #1C243A;
+    --active-card-color: #e0e0e0;
+
+    // LEVEL
+    --green-color: #00cc88;
+    --yellow-color: #ffcc00;
+    --red-color: #ff3366;
+
+    // TEXT
+    --main-text-color: #e0e0e0;
+    --sub-text-color: #8f8f9c;
+    --active-card-text-color: #b0b0c0;
+    --desc-text-color: #e8d8b6;
+    --electro-text-color: #2d7dff;
+
+    // TASKS GRADIENT 
+    --gr-green-strip-color: linear-gradient(90deg, #00cc88, #00ffaa);
+    --gr-green-text-color: linear-gradient(135deg, #00cc88, #00ffaa);
+
+    --gr-yellow-strip-color: linear-gradient(90deg, #ffcc00, #ffdd44); 
+    --gr-yellow-strip-color: linear-gradient(135deg, #ffcc00, #ffdd44); 
+
+    --gr-red-strip-color: linear-gradient(90deg, #ff3366, #ff5588); 
+    --gr-red-strip-color: linear-gradient(135deg, #ff3366, #ff5588); 
+}
