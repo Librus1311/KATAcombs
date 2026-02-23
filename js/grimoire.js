@@ -1,5 +1,17 @@
+function getDifficultyFromKyu(kyu){
+        const kyuNumber = parseInt(kyu)
+
+        if (kyuNumber === 8) return 'easy'
+        if (kyuNumber === 7) return 'medium'
+        if (kyuNumber === 6) return 'hard'
+
+        return "unknwon"
+    }
+
 function createGrimoireItem(kata) {
     const item = document.createElement('div')
+    const difficulty = getDifficultyFromKyu(kata.kyu)
+
     item.className = `grimoire-item ${kata.difficulty}`
     item.dataset.id = kata.id
 
@@ -18,8 +30,7 @@ function createGrimoireItem(kata) {
         </div>
         <p class = "grimore-item-description"> ${kata.description.substring(0, 60)} ${kata.description.length > 60 ? '...' : ''}</p>
         <div class = grimoire-item-footer">
-            <span class = "grimoire-item-difficulty ${kata.difficulty}"> ${kata.difficulty} </span>
-            <span class = "grimoire-item-id"> #${kata.id}</span>
+            <span class = "grimoire-item-difficulty ${kata.difficulty}"> ${kata.kyu} </span>
         </div>
     `
 

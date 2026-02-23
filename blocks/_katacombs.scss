@@ -1,0 +1,13 @@
+@use '../stuff/mixins' as *;
+@use '../stuff/roots';
+
+
+
+.katacombs-wrap{
+    @include flex(row, flex-start, flex-start, 30px);
+
+    
+}
+
+
+

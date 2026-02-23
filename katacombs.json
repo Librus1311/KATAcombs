@@ -7,7 +7,8 @@
             "description": "You are trying to put a hash in ruby or an object in javascript or java into an array, but it always returns error, solve it and keep it as simple as possible!",
             "examples": "",
             "myAnswer": "let arr = []; arr.push({goyda: 'zov', peppa: 'frog'}); console.log(arr);",
-            "codewarsAnswer": "var items = []; items.push({a: 'b', c: 'd'});"
+            "codewarsAnswer": "var items = []; items.push({a: 'b', c: 'd'});",
+            "kyu": "8 kyu"
         },
         {
             "id": 2,
@@ -16,7 +17,8 @@
             "description": "The wide-mouth frog is particularly interested in the eating habits of other creatures. He just can't stop asking the creatures he encounters what they like to eat. But, then he meets the alligator who just LOVES to eat wide-mouthed frogs! When he meets the alligator, it then makes a tiny mouth. Your goal in this kata is to create complete the mouth_size method this method takes one argument animal which corresponds to the animal encountered by the frog. If this one is an alligator (case-insensitive) return small otherwise return wide.",
             "examples": "",
             "myAnswer": "function mouthSize(animal) { const lowerCaseAnimal = animal.toLowerCase(); return lowerCaseAnimal === 'alligator' ? 'small' : 'wide'; } console.log(mouthSize('alligator')); console.log(mouthSize('ne alligator'));",
-            "codewarsAnswer": ""
+            "codewarsAnswer": "",
+            "kyu": "8 kyu"
         },
         {
             "id": 3,
@@ -25,7 +27,8 @@
             "description": "Let's imagine we have a popular online RPG. A player begins with a score of 0 in class E5. A1 is the highest level a player can achieve. Now let's say the players wants to rank up to class E4. To do so the player needs to achieve at least 100 points to enter the qualifying stage. Write a script that will check to see if the player has achieved at least 100 points in his class. If so, he enters the qualifying stage. In that case, we return, \"Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up.\". Otherwise return, False/false (according to the language in use).",
             "examples": "",
             "myAnswer": "function rank(score) { return score >= 100 ? 'Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up.' : false; } console.log(rank(120)); console.log(rank(99));",
-            "codewarsAnswer": ""
+            "codewarsAnswer": "",
+            "kyu": "8 kyu"
         },
         {
             "id": 4,
@@ -34,7 +37,8 @@
             "description": "Fix the function",
             "examples": "",
             "myAnswer": "function res(num) { return num + 5; } console.log(res(5));",
-            "codewarsAnswer": "function addFive(num) { return num + 5; }"
+            "codewarsAnswer": "function addFive(num) { return num + 5; }",
+            "kyu": "8 kyu"
         },
         {
             "id": 5,
@@ -43,7 +47,8 @@
             "description": "Create a function close_compare that accepts 3 parameters: a, b, and an optional margin. The function should return whether a is lower than, close to, or higher than b. Please note the following: When a is close to b, return 0. For this challenge, a is considered 'close to' b if margin is greater than or equal to the absolute distance between a and b. Otherwise... When a is less than b, return -1. When a is greater than b, return 1. If margin is not given, treat it as if it were zero. Assume: margin >= 0. Tip: Some languages have a way to make parameters optional.",
             "examples": "If a = 3, b = 5, and margin = 3, then close_compare(a, b, margin) should return 0. This is because a and b are no more than 3 numbers apart. Example 2: If a = 3, b = 5, and margin = 0, then close_compare(a, b, margin) should return -1. This is because the distance between a and b is greater than 0, and a is less than b.",
             "myAnswer": "function close_compare(a, b, margin) { if (margin === undefined) margin = 0; if (a >= b) { if (a - b <= margin) { return 0; } else { return 1; } } else { if (b - a <= margin) { return 0; } else { return -1; } } } console.log(close_compare(1, 1, 1)); console.log(close_compare(5, 1, 1)); console.log(close_compare(1, 3, 1)); console.log(close_compare(1, 3, 2)); console.log(close_compare(1, 3));",
-            "codewarsAnswer": "function closeCompare(a, b, m = 0) { return Math.abs(a - b) <= m ? 0 : Math.sign(a - b); }"
+            "codewarsAnswer": "function closeCompare(a, b, m = 0) { return Math.abs(a - b) <= m ? 0 : Math.sign(a - b); }",
+            "kyu": "8 kyu"
         },
         {
             "id": 6,
@@ -52,7 +57,8 @@
             "description": "The purpose of this kata is to work out just how many bottles of duty free whiskey you would have to buy such that the savings over the normal high street price would effectively cover the cost of your holiday. You will be given the high street price (normPrice, in £ (Pounds)), the duty free discount (discount, in percent) and the cost of the holiday (in £). For example, if a bottle costs £10 normally and the duty free discount is 10%, you would save £1 per bottle. If your holiday will cost £500, you would have to purchase 500 bottles to save £500, so the answer you return should be 500. Another example: if a bottle costs £12 normally and the duty free discount is 50%, you would save £6 per bottle. If your holiday will cost £1000, you would have to purchase 166.66 bottles to save £1000, so your answer should be 166 bottles. All inputs will be integers. Please return an integer. Round down.",
             "examples": "",
             "myAnswer": "function alcash(price, discount, total) { let amountWiskie = total / (price * (discount / 100)); return Math.floor(amountWiskie); } console.log(alcash(10, 10, 500)); console.log(alcash(12, 50, 1000));",
-            "codewarsAnswer": "function dutyFree(normPrice, discount, hol) { return Math.floor(hol / normPrice / discount * 100); }"
+            "codewarsAnswer": "function dutyFree(normPrice, discount, hol) { return Math.floor(hol / normPrice / discount * 100); }",
+            "kyu": "8 kyu"
         },
         {
             "id": 7,
@@ -61,7 +67,8 @@
             "description": "The objective of Duck, duck, goose is to walk in a circle, tapping on each player's head until one is chosen. Task: Given an array of Player objects and a position (first position is 1), return the name of the chosen Player. name is a property of Player objects, e.g Player.name",
             "examples": "duck_duck_goose([a, b, c, d], 1) should return a.name; duck_duck_goose([a, b, c, d], 5) should return a.name; duck_duck_goose([a, b, c, d], 4) should return d.name",
             "myAnswer": "const playerArray = [{ name: 'a' }, { name: 'b' }, { name: 'c' }, { name: 'd' }]; function DuckDuckGoose(player, step) { return player[(step - 1) % player.length].name; } console.log(DuckDuckGoose(playerArray, 6));",
-            "codewarsAnswer": "function duckDuckGoose(players, goose) { return players[(goose-1) % players.length].name; }"
+            "codewarsAnswer": "function duckDuckGoose(players, goose) { return players[(goose-1) % players.length].name; }",
+            "kyu": "8 kyu"
         },
         {
             "id": 8,
@@ -70,7 +77,8 @@
             "description": "Provided is a function which accepts two parameters in the following order: array, element and returns the index of the element if found and \"Not found\" otherwise. Your task is to shorten the code as much as possible in order to meet the character count requirements of the Kata. You may assume that all array elements are unique. The character limit is 60 (CoffeeScript), 85 (JavaScript, Python), 161 (Java).",
             "examples": "",
             "myAnswer": "const find = (array, element) => { const index = array.indexOf(element); return index !== -1 ? index : 'Not found'; }; console.log(find([1, 2, 3, 4, 5], 2));",
-            "codewarsAnswer": "var find = (a, e) => a.includes(e) ? a.indexOf(e) : 'Not found';"
+            "codewarsAnswer": "var find = (a, e) => a.includes(e) ? a.indexOf(e) : 'Not found';",
+            "kyu": "8 kyu"
         }
     ]
 }

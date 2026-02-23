@@ -1,11 +1,63 @@
-.sec-wrap{
-    display: flex;
-    // flex-direction: column;
+// DIFFICULTY COLORS
 
+.grimoire-item.easy {
+    border-left: var(--gren-color);
 }
 
-.tasks-list{
-    width: 20%;
-    outline: 1px solid red;
-
+.grimoire-item.medium {
+    border-left: var(--yellow-color);
 }
+
+.grimoire-item.hard {
+    border-left: var(--red-color);
+}
+
+
+
+
+.grimoire{
+        width: 35%;
+
+        background: var(--bg-grimoire-list-color);
+
+        &-list{
+            padding: 0 20px;
+        }
+
+        .grimoire-header{
+            padding: 20px 50px;
+
+            background: var(--bg-grimoire-titleAndActive-item-color);
+
+            margin-bottom: 30px;
+
+            h2{
+                margin-top: 0;
+
+                text-transform: uppercase;
+
+                color: var(--electro-text-color);
+            }
+
+            span{
+                color: var(--sub-text-color);
+            }
+        }
+
+        .grimoire-item{
+            margin-bottom: 20px;
+            padding: 20px;
+
+            border-radius: 20px;
+
+            background: var(--bg-grimoire-titleAndActive-item-color);
+
+            border-left: 4px solid transparent;
+
+            &-title{
+                margin-top: 0;
+
+                color: var(--main-text-color);
+            }
+        }
+    }

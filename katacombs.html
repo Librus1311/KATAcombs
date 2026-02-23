@@ -11,27 +11,29 @@
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=JetBrains+Mono:wght@300;400;500&family=Rajdhani:wght@400;500&family=Cinzel:wght@400;500&display=swap"
         rel="stylesheet"> -->
     <link rel="stylesheet" href="style.css">
-    <script src="js/grimoire.js"></script>
-    <script src="js/arena.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/grimoire.js" defer></script>
+    <script src="js/arena.js" defer></script>
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
     <div class="container">
-        <aside class="grimoire">
-            <div class="grimoire-header">
-                <h2>Мои задачи</h2>
-                <span class="grimoire-count" id="task-count">8 задач</span>
-            </div>
-            <div class="grimoire-list" id="grimoire-list">
-                <!-- Сюда будут загружаться элементы списка -->
-            </div>
-        </aside>
-        <main class="arena">
-            <div class="arena-content" id="arena-content">
-                <!-- Сюда будет загружаться выбранная задача -->
-            </div>
-        </main>
+        <div class="katacombs-wrap">
+            <aside class="grimoire">
+                <div class="grimoire-header">
+                    <h2>katacombs</h2>
+                    <span class="grimoire-count" id="task-count">Kata quests</span>
+                </div>
+                <div class="grimoire-list" id="grimoire-list">
+                    <!-- Сюда будут загружаться элементы списка -->
+                </div>
+            </aside>
+            <main class="arena">
+                <div class="arena-content" id="arena-content">
+                    <!-- Сюда будет загружаться выбранная задача -->
+                </div>
+            </main>
+        </div>
     </div>
 
 </body>
