@@ -8,7 +8,7 @@
             "examples": "",
             "myAnswer": "let arr = []; arr.push({goyda: 'zov', peppa: 'frog'}); console.log(arr);",
             "codewarsAnswer": "var items = []; items.push({a: 'b', c: 'd'});",
-            "kyu": "8 kyu"
+            "kyu": "7 kyu"
         },
         {
             "id": 2,
@@ -18,7 +18,7 @@
             "examples": "",
             "myAnswer": "function mouthSize(animal) { const lowerCaseAnimal = animal.toLowerCase(); return lowerCaseAnimal === 'alligator' ? 'small' : 'wide'; } console.log(mouthSize('alligator')); console.log(mouthSize('ne alligator'));",
             "codewarsAnswer": "",
-            "kyu": "8 kyu"
+            "kyu": "6 kyu"
         },
         {
             "id": 3,

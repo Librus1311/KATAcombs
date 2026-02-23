@@ -33,3 +33,27 @@
     --gr-red-strip-color: linear-gradient(90deg, #ff3366, #ff5588); 
     --gr-red-strip-color: linear-gradient(135deg, #ff3366, #ff5588); 
 }
+
+// SETTINGS
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+}
+
+// STATUS
+
+.active{
+    border-left: 10px solid var(--active-card-color) !important;
+    box-shadow: 
+        0 0 10px var(--active-card-color),
+        0 0 20px var(--active-card-color),
+        0 0 30px var(--active-card-color);
+}

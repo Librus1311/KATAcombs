@@ -1,0 +1,21 @@
+@use '../stuff/mixins' as *;
+@use '../stuff/roots';
+
+.arena{
+
+    background: var(--border-color);
+}
+
+.arena-card{
+    
+    &-header{
+        padding: 20px;
+        background: var(--arena-bg-color);
+
+        color: red;
+    }
+
+    &-description{
+        background: var();
+    }
+}

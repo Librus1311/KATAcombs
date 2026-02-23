@@ -1,47 +1,3 @@
-.grimoire-item.easy {
-  border-left: var(--gren-color);
-}
-
-.grimoire-item.medium {
-  border-left: var(--yellow-color);
-}
-
-.grimoire-item.hard {
-  border-left: var(--red-color);
-}
-
-.grimoire {
-  width: 35%;
-  background: var(--bg-grimoire-list-color);
-}
-.grimoire-list {
-  padding: 0 20px;
-}
-.grimoire .grimoire-header {
-  padding: 20px 50px;
-  background: var(--bg-grimoire-titleAndActive-item-color);
-  margin-bottom: 30px;
-}
-.grimoire .grimoire-header h2 {
-  margin-top: 0;
-  text-transform: uppercase;
-  color: var(--electro-text-color);
-}
-.grimoire .grimoire-header span {
-  color: var(--sub-text-color);
-}
-.grimoire .grimoire-item {
-  margin-bottom: 20px;
-  padding: 20px;
-  border-radius: 20px;
-  background: var(--bg-grimoire-titleAndActive-item-color);
-  border-left: 4px solid transparent;
-}
-.grimoire .grimoire-item-title {
-  margin-top: 0;
-  color: var(--main-text-color);
-}
-
 :root {
   --arena-bg-color: #0a0a0f;
   --bg-grimoire-list-color: #121218;
@@ -66,10 +22,113 @@
   --gr-red-strip-color: linear-gradient(135deg, #ff3366, #ff5588);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.active {
+  border-left: 10px solid var(--active-card-color) !important;
+  box-shadow: 0 0 10px var(--active-card-color), 0 0 20px var(--active-card-color), 0 0 30px var(--active-card-color);
+}
+
+.grimoire {
+  height: 100vh;
+  width: 35%;
+  background: var(--bg-grimoire-list-color);
+  display: flex;
+  flex-direction: column;
+}
+.grimoire-list {
+  padding: 0 20px;
+  flex-grow: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.grimoire .grimoire-header {
+  padding: 20px 50px;
+  background: var(--bg-grimoire-titleAndActive-item-color);
+}
+.grimoire .grimoire-header h2 {
+  margin-top: 0;
+  text-transform: uppercase;
+  color: var(--electro-text-color);
+}
+.grimoire .grimoire-header span {
+  color: var(--sub-text-color);
+}
+.grimoire .grimoire-list {
+  padding-top: 20px;
+}
+.grimoire .grimoire-list .grimoire-item {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--bg-grimoire-titleAndActive-item-color);
+  border-left: 10px solid transparent;
+}
+.grimoire .grimoire-list .grimoire-item.easy {
+  border-left-color: var(--green-color);
+}
+.grimoire .grimoire-list .grimoire-item.medium {
+  border-left-color: var(--yellow-color);
+}
+.grimoire .grimoire-list .grimoire-item.hard {
+  border-left-color: var(--red-color);
+}
+.grimoire .grimoire-list .grimoire-item.easy .grimoire-item-difficulty {
+  color: var(--green-color);
+}
+.grimoire .grimoire-list .grimoire-item.medium .grimoire-item-difficulty {
+  color: var(--yellow-color);
+}
+.grimoire .grimoire-list .grimoire-item.hard .grimoire-item-difficulty {
+  color: var(--red-color);
+}
+.grimoire .grimoire-list .grimoire-item:hover {
+  cursor: pointer;
+}
+.grimoire .grimoire-list .grimoire-item.easy:hover {
+  box-shadow: 0px 0 10px var(--green-color);
+}
+.grimoire .grimoire-list .grimoire-item.medium:hover {
+  box-shadow: 0px 0 10px var(--yellow-color);
+}
+.grimoire .grimoire-list .grimoire-item.hard:hover {
+  box-shadow: 0px 0 10px var(--red-color);
+}
+.grimoire .grimoire-list .grimoire-item-description {
+  color: var(--sub-text-color);
+}
+.grimoire .grimoire-list .grimoire-item-title {
+  margin-top: 0;
+  color: var(--main-text-color);
+}
+
+.arena {
+  background: var(--border-color);
+}
+
+.arena-card-header {
+  padding: 20px;
+  background: var(--arena-bg-color);
+  color: red;
+}
+.arena-card-description {
+  background: var();
+}
+
 .katacombs-wrap {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 30px;
+  gap: 0px;
 }/*# sourceMappingURL=style.css.map */
