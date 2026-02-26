@@ -12,10 +12,12 @@ function createArenaCard(kata) {
 
     card.innerHTML = `
         <div class = "arena-card-header" style = "border-colors: ${accentColor}">
-            <h2>${kata.name}</h2>
-            <div class = "arena-card-meta">
+ 
+                <h2>${kata.name}</h2>
+                
+  
+            <div class = "arena-card-header-meta">
                 <span class = "arena-rank" style = "background-colors: ${accentColor}20; color; ${accentColor}"> ${kata.name}</span>
-                <span class = "arena-difficulty" style = "color: ${accentColor}"> ${kata.difficulty}</span>
             </div>
         </div>
 

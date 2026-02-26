@@ -9,13 +9,19 @@
 .arena-card{
     
     &-header{
+
+        
+
+        &-title{
         padding: 20px;
         background: var(--arena-bg-color);
 
         color: red;
     }
 
+    }
+    
     &-description{
-        background: var();
+        background:green;
     }
 }

@@ -116,13 +116,13 @@ body {
   background: var(--border-color);
 }
 
-.arena-card-header {
+.arena-card-header-title {
   padding: 20px;
   background: var(--arena-bg-color);
   color: red;
 }
 .arena-card-description {
-  background: var();
+  background: green;
 }
 
 .katacombs-wrap {
