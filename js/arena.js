@@ -1,50 +1,52 @@
+function getDifficultyFromKyu(kyu) {
+    const kyuNumber = parseInt(kyu);
+    if (kyuNumber === 8) return 'easy';
+    if (kyuNumber === 7) return 'medium';
+    if (kyuNumber === 6) return 'hard';
+    return 'unknown';
+}
+
+
 function createArenaCard(kata) {
-    const card = document.createElement('div')
-    card.className = `arena-card ${kata.difficulty}`
-
-    const difficultyColor = {
-        'easy': '#00cc88',
-        'medium': '#ffcc00',
-        'hard': '#ff3366'
-    }
-
-    const accentColor = difficultyColor[kata.difficulty] || '#00cc88'
+    const card = document.createElement('div');
+    
+    const difficulty = getDifficultyFromKyu(kata.kyu);
+    card.className = `arena-card ${difficulty}`;
 
     card.innerHTML = `
-        <div class = "arena-card-header" style = "border-colors: ${accentColor}">
- 
-                <h2>${kata.name}</h2>
-                
-  
-            <div class = "arena-card-header-meta">
-                <span class = "arena-rank" style = "background-colors: ${accentColor}20; color; ${accentColor}"> ${kata.name}</span>
+        <div class="arena-card-header" >
+            <h2 class="${difficulty}">${kata.name}</h2>
+            <div class="arena-card-header-rank">
+                <span class="arena-rank">${kata.kyu}</span>
             </div>
         </div>
 
-        <div class = "arena-card-description">
+        <div class="arena-card-description">
             <h3>Описание</h3>
             <p>${kata.description}</p>
-            ${kata.examples ? `<pre class = "arena-examples"> ${kata.examples} </pre>` : ''}
+            ${kata.examples ? `<pre class="arena-examples">${kata.examples}</pre>` : ''}
         </div>
 
-        <div class = "arena-card-solution">
-            <h3>Мое решение</h3>
+        <div class="arena-card-solution">
+            <h3>Моё решение</h3>
             <pre><code>${kata.myAnswer}</code></pre>
         </div>
 
-        ${kata.codeWarsAnswer ? `
-            <div class = "arena-card-solution-CW">
-                <h3> Решение с CodeWars</h3>
-                <pre><code>${kata.codeWarsAnswer}</code></pre>
+        ${kata.codewarsAnswer ? `
+            <div class="arena-card-solution-cw">
+                <h3>Решение с CodeWars</h3>
+                <pre><code>${kata.codewarsAnswer}</code></pre>
             </div>
         ` : ''}
 
-        <div class = "arena-card-footer">
-            <a href = "${kata.link} "target = "_blank" class = "arena-link" style = "color:${accentColor}> Открыть на CodeWars
+        <div class="arena-card-footer">
+            <a href="${kata.link}" target="_blank" class="arena-link">
+                🔗 Открыть на CodeWars
             </a>
         </div>
-    `
-    return card
+    `;
+
+    return card;
 }
 
 function renderArena(container, kata) {

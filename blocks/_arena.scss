@@ -3,21 +3,18 @@
 
 .arena{
 
-    background: var(--border-color);
+    // background: var(--border-color);
 }
 
 .arena-card{
-    
+    padding: 20px 0 0 30px;
+
     &-header{
-
-        
-
-        &-title{
-        padding: 20px;
+        @include flex(row, flex-start, center, 30px);
         background: var(--arena-bg-color);
+        border-bottom: 3px solid var(--border-color);
 
-        color: red;
-    }
+
 
     }
     
