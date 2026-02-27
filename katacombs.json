@@ -8,7 +8,7 @@
             "examples": "",
             "myAnswer": "let arr = []; arr.push({goyda: 'zov', peppa: 'frog'}); console.log(arr);",
             "codewarsAnswer": "var items = []; items.push({a: 'b', c: 'd'});",
-            "kyu": "7 kyu"
+            "kyu": "8 kyu"
         },
         {
             "id": 2,
@@ -28,7 +28,7 @@
             "examples": "",
             "myAnswer": "function rank(score) { return score >= 100 ? 'Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up.' : false; } console.log(rank(120)); console.log(rank(99));",
             "codewarsAnswer": "",
-            "kyu": "8 kyu"
+            "kyu": "6 kyu"
         },
         {
             "id": 4,

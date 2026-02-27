@@ -1,4 +1,5 @@
 @use '../stuff/mixins' as *;
+// @use '../stuff/mixins' as difficulty; пидагог дипсик меня подставил
 @use '../stuff/roots';
 
 .grimoire {
@@ -52,29 +53,43 @@
 
             border-left: 10px solid transparent;
 
-            &.easy {
-                border-left-color: var(--green-color);
+            @each $name, $color in $difficulty-colors{
+                &.#{$name} {
+                    @include difficulty-border($color, 10px, left);
+                }
             }
 
-            &.medium {
-                border-left-color: var(--yellow-color);
+            // &.easy {
+            //     border-left-color: var(--green-color);
+            // }
+
+            // &.medium {
+            //     border-left-color: var(--yellow-color);
+            // }
+
+            // &.hard {
+            //     border-left-color: var(--red-color);
+            // }
+
+            .grimoire-item-difficulty{
+                @each $name, $color in $difficulty-colors{
+                    &.#{$name} {
+                        @include difficulty-text($color);
+                    }
+                }
             }
 
-            &.hard {
-                border-left-color: var(--red-color);
-            }
+            // &.easy .grimoire-item-difficulty {
+            //     color: var(--green-color);
+            // }
 
-            &.easy .grimoire-item-difficulty {
-                color: var(--green-color);
-            }
+            // &.medium .grimoire-item-difficulty {
+            //     color: var(--yellow-color);
+            // }
 
-            &.medium .grimoire-item-difficulty {
-                color: var(--yellow-color);
-            }
-
-            &.hard .grimoire-item-difficulty {
-                color: var(--red-color);
-            }
+            // &.hard .grimoire-item-difficulty {
+            //     color: var(--red-color);
+            // }
 
             &:hover {
                 cursor: pointer;

@@ -1,24 +1,56 @@
+@use 'sass:map';
 @use '../stuff/mixins' as *;
 @use '../stuff/roots';
 
-.arena{
-
-    // background: var(--border-color);
-}
 
 .arena-card{
     padding: 20px 0 0 30px;
 
     &-header{
         @include flex(row, flex-start, center, 30px);
+        
         background: var(--arena-bg-color);
-        border-bottom: 3px solid var(--border-color);
+        border-bottom: 3px solid transparent; //нужен ли тут транспарент, если после он все равно будет перекрываться border-top?
 
+        @each $name, $color in $difficulty-colors{
+            $bg-color: map.get($difficulty-bg-colors, $name);
 
+            &.#{$name} {
+                @include difficulty-border($color, 4px, top);
 
+                h2 {
+                    @include difficulty-text($color);
+                }
+
+                .arena-rank{
+                    @include difficulty-text($color);
+                    @include difficulty-border($color, 2px);
+                    @include difficulty-bg($bg-color, 2)
+                }
+            }
+        }
+        // .arena-rank{
+        //     @each $name, $color in $difficulty-bg-colors{
+        //         &.#{$name} {
+        //             @include difficulty-bg($color, 0.1)
+        //         }
+        //     }
+        // }
     }
+
+    
     
     &-description{
-        background:green;
+        margin-top: 40px;
+
+        background: var(--bg-description);
+        color: var(--text-description);
+        
+        @each $name, $color in $difficulty-colors{
+            .arena-card.#{$name} & {
+                @include difficulty-glow($color, 15px);
+                border: 1px solid $color;
+            }
+        }
     }
 }

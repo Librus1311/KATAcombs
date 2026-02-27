@@ -14,14 +14,14 @@ function createArenaCard(kata) {
     card.className = `arena-card ${difficulty}`;
 
     card.innerHTML = `
-        <div class="arena-card-header" >
+        <div class="arena-card-header ${difficulty}" >
             <h2 class="${difficulty}">${kata.name}</h2>
             <div class="arena-card-header-rank">
                 <span class="arena-rank">${kata.kyu}</span>
             </div>
         </div>
 
-        <div class="arena-card-description">
+        <div class="arena-card-description ${difficulty}">
             <h3>Описание</h3>
             <p>${kata.description}</p>
             ${kata.examples ? `<pre class="arena-examples">${kata.examples}</pre>` : ''}

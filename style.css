@@ -9,6 +9,11 @@
   --green-color: #00cc88;
   --yellow-color: #ffcc00;
   --red-color: #ff3366;
+  --bg-green-color: #00ffaa;
+  --bg-yellow-color: #ffdd44;
+  --bg-red-color: #ff5588;
+  --bg-description: #2a2322;
+  --text-description: #e8d8b6;
   --main-text-color: #e0e0e0;
   --sub-text-color: #8f8f9c;
   --active-card-text-color: #b0b0c0;
@@ -76,21 +81,21 @@ body {
   border-left: 10px solid transparent;
 }
 .grimoire .grimoire-list .grimoire-item.easy {
-  border-left-color: var(--green-color);
+  border-left: 10px solid var(--green-color);
 }
 .grimoire .grimoire-list .grimoire-item.medium {
-  border-left-color: var(--yellow-color);
+  border-left: 10px solid var(--yellow-color);
 }
 .grimoire .grimoire-list .grimoire-item.hard {
-  border-left-color: var(--red-color);
+  border-left: 10px solid var(--red-color);
 }
-.grimoire .grimoire-list .grimoire-item.easy .grimoire-item-difficulty {
+.grimoire .grimoire-list .grimoire-item .grimoire-item-difficulty.easy {
   color: var(--green-color);
 }
-.grimoire .grimoire-list .grimoire-item.medium .grimoire-item-difficulty {
+.grimoire .grimoire-list .grimoire-item .grimoire-item-difficulty.medium {
   color: var(--yellow-color);
 }
-.grimoire .grimoire-list .grimoire-item.hard .grimoire-item-difficulty {
+.grimoire .grimoire-list .grimoire-item .grimoire-item-difficulty.hard {
   color: var(--red-color);
 }
 .grimoire .grimoire-list .grimoire-item:hover {
@@ -123,10 +128,57 @@ body {
   align-items: center;
   gap: 30px;
   background: var(--arena-bg-color);
-  border-bottom: 3px solid var(--border-color);
+  border-bottom: 3px solid transparent;
+}
+.arena-card-header.easy {
+  border-top: 4px solid var(--green-color);
+}
+.arena-card-header.easy h2 {
+  color: var(--green-color);
+}
+.arena-card-header.easy .arena-rank {
+  color: var(--green-color);
+  border: 2px solid var(--green-color);
+  background-color: #00ffaa;
+}
+.arena-card-header.medium {
+  border-top: 4px solid var(--yellow-color);
+}
+.arena-card-header.medium h2 {
+  color: var(--yellow-color);
+}
+.arena-card-header.medium .arena-rank {
+  color: var(--yellow-color);
+  border: 2px solid var(--yellow-color);
+  background-color: #ffdd44;
+}
+.arena-card-header.hard {
+  border-top: 4px solid var(--red-color);
+}
+.arena-card-header.hard h2 {
+  color: var(--red-color);
+}
+.arena-card-header.hard .arena-rank {
+  color: var(--red-color);
+  border: 2px solid var(--red-color);
+  background-color: #ff5588;
 }
 .arena-card-description {
-  background: green;
+  margin-top: 40px;
+  background: var(--bg-description);
+  color: var(--text-description);
+}
+.arena-card.easy .arena-card-description {
+  box-shadow: 0 0 15px var(--green-color);
+  border: 1px solid var(--green-color);
+}
+.arena-card.medium .arena-card-description {
+  box-shadow: 0 0 15px var(--yellow-color);
+  border: 1px solid var(--yellow-color);
+}
+.arena-card.hard .arena-card-description {
+  box-shadow: 0 0 15px var(--red-color);
+  border: 1px solid var(--red-color);
 }
 
 .katacombs-wrap {

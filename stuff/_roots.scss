@@ -16,6 +16,15 @@
     --yellow-color: #ffcc00;
     --red-color: #ff3366;
 
+    --bg-green-color: #00ffaa;
+    --bg-yellow-color: #ffdd44;
+    --bg-red-color: #ff5588;
+
+    // DESCRIPTION
+
+    --bg-description: #2a2322; 
+    --text-description: #e8d8b6;
+
     // TEXT
     --main-text-color: #e0e0e0;
     --sub-text-color: #8f8f9c;
@@ -57,3 +66,7 @@ body {
         0 0 20px var(--active-card-color),
         0 0 30px var(--active-card-color);
 }
+
+// RANKS
+
+

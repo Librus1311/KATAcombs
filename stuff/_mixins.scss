@@ -11,3 +11,43 @@
     @if $align != null {align-items: $align;}
     @if $gap != null {gap: $gap;}
 }
+
+// DIFFICULTY COLORS
+
+$difficulty-colors: (
+    'easy': var(--green-color),
+    'medium': var(--yellow-color),
+    'hard': var(--red-color)
+);
+
+@mixin difficulty-text($color) {
+    color: $color
+}
+
+@mixin difficulty-border(
+    $color,
+    $width: 2px,
+    $sides: all // all, top, right, bottom, left
+) {
+    @if $sides == all {
+        border: $width solid $color;
+    } @else {
+        @each $side in $sides {
+            border-#{$side}: $width solid $color;
+        }
+    }
+}
+
+$difficulty-bg-colors: (
+    'easy' : #00ffaa,
+    'medium' : #ffdd44,
+    'hard' : #ff5588
+);
+
+@mixin difficulty-bg($color, $opacity: 0.1) {
+    background-color: rgba($color, $opacity);
+}
+
+@mixin difficulty-glow($color, $spread: 10px){
+    box-shadow: 0 0 $spread $color
+}
