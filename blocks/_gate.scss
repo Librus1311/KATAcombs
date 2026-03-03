@@ -1,0 +1,364 @@
+// blocks/_gate.scss
+@use '../stuff/mixins' as *;
+@use '../stuff/roots';
+
+.gate-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.gate-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 900;
+    letter-spacing: 0.3em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.neon-text {
+    color: #e0e0e0;
+    text-shadow: 
+        0 0 10px #2d7dff,
+        0 0 20px #2d7dff,
+        0 0 30px #2d7dff,
+        0 0 40px #9d4edd,
+        0 0 70px #9d4edd,
+        0 0 80px #9d4edd,
+        0 0 100px #9d4edd;
+    animation: neon-pulse 2s infinite alternate;
+}
+
+@keyframes neon-pulse {
+    from {
+        text-shadow: 
+            0 0 10px #2d7dff,
+            0 0 20px #2d7dff,
+            0 0 30px #2d7dff,
+            0 0 40px #9d4edd,
+            0 0 70px #9d4edd,
+            0 0 80px #9d4edd,
+            0 0 100px #9d4edd;
+    }
+    to {
+        text-shadow: 
+            0 0 5px #2d7dff,
+            0 0 10px #2d7dff,
+            0 0 15px #2d7dff,
+            0 0 20px #9d4edd,
+            0 0 35px #9d4edd,
+            0 0 40px #9d4edd,
+            0 0 50px #9d4edd;
+    }
+}
+
+.gate-subtitle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.2rem;
+    color: #8f8f9c;
+    margin-bottom: 60px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+// 3D логотип
+.logo-3d-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 40px auto;
+    perspective: 1000px;
+}
+
+.logo-3d {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: rotate-3d 20s infinite linear;
+}
+
+@keyframes rotate-3d {
+    0% { transform: rotateX(-20deg) rotateY(0deg); }
+    100% { transform: rotateX(-20deg) rotateY(360deg); }
+}
+
+.sword {
+    position: absolute;
+    width: 100px;
+    height: 200px;
+    background: linear-gradient(45deg, transparent 40%, #2d7dff 50%, transparent 60%);
+    clip-path: polygon(50% 0%, 55% 20%, 45% 20%, 50% 0%, 52% 100%, 48% 100%);
+    box-shadow: 
+        0 0 20px #2d7dff,
+        inset 0 0 20px rgba(45, 125, 255, 0.5);
+    opacity: 0.9;
+}
+
+.sword-1 {
+    transform: rotate(45deg) translateZ(50px);
+    animation: sword-glow-1 3s infinite alternate;
+}
+
+.sword-2 {
+    transform: rotate(-45deg) translateZ(50px);
+    animation: sword-glow-2 3s infinite alternate 0.5s;
+}
+
+@keyframes sword-glow-1 {
+    0%, 100% { 
+        background: linear-gradient(45deg, transparent 40%, #2d7dff 50%, transparent 60%);
+        box-shadow: 0 0 20px #2d7dff;
+    }
+    50% { 
+        background: linear-gradient(45deg, transparent 40%, #00cc88 50%, transparent 60%);
+        box-shadow: 0 0 40px #00cc88;
+    }
+}
+
+@keyframes sword-glow-2 {
+    0%, 100% { 
+        background: linear-gradient(45deg, transparent 40%, #ff3366 50%, transparent 60%);
+        box-shadow: 0 0 20px #ff3366;
+    }
+    50% { 
+        background: linear-gradient(45deg, transparent 40%, #9d4edd 50%, transparent 60%);
+        box-shadow: 0 0 40px #9d4edd;
+    }
+}
+
+.code-connection {
+    position: absolute;
+    background: currentColor;
+    box-shadow: 0 0 10px currentColor;
+}
+
+.connection-1 {
+    width: 2px;
+    height: 100px;
+    color: #00cc88;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg) translateZ(-30px);
+    animation: connection-pulse 2s infinite;
+}
+
+.connection-2 {
+    width: 2px;
+    height: 100px;
+    color: #ff3366;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg) translateZ(-30px);
+    animation: connection-pulse 2s infinite reverse;
+}
+
+@keyframes connection-pulse {
+    0%, 100% { opacity: 0.3; height: 80px; }
+    50% { opacity: 1; height: 120px; }
+}
+
+// Кнопка входа
+.enter-button-container {
+    margin-top: 60px;
+    position: relative;
+}
+
+.enter-button {
+    position: relative;
+    background: transparent;
+    color: #2d7dff;
+    border: 2px solid #2d7dff;
+    padding: 20px 50px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 
+        0 0 20px rgba(45, 125, 255, 0.3),
+        inset 0 0 20px rgba(45, 125, 255, 0.1);
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #00cc88, transparent);
+        transition: left 0.7s ease;
+    }
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        right: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #ff3366, transparent);
+        transition: right 0.7s ease;
+    }
+    
+    &:hover {
+        color: #e0e0e0;
+        border-color: #00cc88;
+        box-shadow: 
+            0 0 40px rgba(0, 204, 136, 0.5),
+            inset 0 0 30px rgba(0, 204, 136, 0.2);
+        transform: translateY(-5px);
+        
+        &::before {
+            left: 100%;
+        }
+        
+        &::after {
+            right: 100%;
+        }
+        
+        .button-code-overlay {
+            opacity: 1;
+        }
+    }
+}
+
+.button-code-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 15, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.glitching-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: #00cc88;
+    white-space: nowrap;
+    animation: glitch-text 0.3s infinite;
+}
+
+@keyframes glitch-text {
+    0% { transform: translate(0); opacity: 1; }
+    20% { transform: translate(-2px, 1px); opacity: 0.8; }
+    40% { transform: translate(2px, -1px); opacity: 0.9; }
+    60% { transform: translate(-1px, 2px); opacity: 0.8; }
+    80% { transform: translate(1px, -2px); opacity: 0.9; }
+    100% { transform: translate(0); opacity: 1; }
+}
+
+// Фон с кодом
+.code-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -2;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.code-line {
+    position: absolute;
+    color: #2d7dff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    white-space: nowrap;
+    animation: float-code 20s linear infinite;
+    text-shadow: 0 0 5px currentColor;
+    will-change: transform;
+}
+
+@keyframes float-code {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.7;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+// Футер
+.gate-footer {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+    color: #8f8f9c;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    
+    a {
+        color: #9d4edd;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        
+        &:hover {
+            color: #b388ff;
+            text-shadow: 0 0 10px #9d4edd;
+        }
+    }
+}
+
+// Адаптивность
+@media (max-width: 768px) {
+    .gate-title {
+        font-size: clamp(1.8rem, 6vw, 3rem);
+        letter-spacing: 0.2em;
+    }
+
+    .logo-3d-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .sword {
+        width: 70px;
+        height: 140px;
+    }
+
+    .enter-button {
+        padding: 15px 30px;
+        font-size: 1rem;
+        letter-spacing: 0.2em;
+    }
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0a0a0f;  /* тёмный фон */
+    z-index: -3;  /* самый нижний */
+}

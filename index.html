@@ -1,18 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Gate</title>
+    <title>The Hall of Katas</title>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=JetBrains+Mono:wght@300;400;500&family=Rajdhani:wght@400;500&family=Cinzel:wght@400;500&display=swap"
+        rel="stylesheet"> -->
     <link rel="stylesheet" href="style.css">
-    <script src="js/script.js" defer></script>
+    <script src="js/gate.js" defer></script>
+    <!-- CodeMirror -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/dracula.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
 </head>
+
 <body>
-    <h1 class="main-title">Katacombs</h1>
-    <h2 class="sub-main-title">30 conquered challenges</h2>
-    <button class="main-btn"> <a href="katacombs.html">Enter the Katacombs</a> </button>
-    <footer class="main-footer">
-        <a class="main-footer-link" href="https://github.com/Librus1311">LetMeSolo</a>
-    </footer>
+    <div class="code-background" id="code-background"></div>
+    
+    <div class="gate-container">
+        <h1 class="gate-title">
+            <span class="neon-text">KATACOMBS</span>
+        </h1>
+        
+        <div class="gate-subtitle">
+            CONQUERED CHALLENGES
+        </div>
+        
+        <div class="logo-3d-container">
+            <div class="logo-3d">
+                <div class="sword sword-1"></div>
+                <div class="sword sword-2"></div>
+                <div class="code-connection connection-1"></div>
+                <div class="code-connection connection-2"></div>
+            </div>
+        </div>
+        
+        <div class="enter-button-container">
+            <a href="katacombs.html" class="enter-buttom-link">
+                <button class="enter-button" id="enter-button">
+                    ENTER THE KATACOMBS
+                    <div class="button-code-overlay">
+                        <div class="glitching-code" id="glitching-code"> 
+                            if (user.ready) { katacombs.unlock(); }
+                        </div>
+                    </div>
+                </button>
+            </a>
+        </div>
+    </div>
+    
+    <div class="gate-footer">
+        <p>LETMESOLO • 
+        <a href="https://www.codewars.com" target="_blank">CODEWARS</a> • 
+        MADE WITH &lt;/&gt; AND DEEPSEEK (THIS PAGE MOST OF ALL)</p>
+    </div>
+    
+    <script src="js/gate.js" defer></script>
 </body>
 </html>

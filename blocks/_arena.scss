@@ -1,55 +1,227 @@
 @use 'sass:map';
-@use '../stuff/mixins' as *;
+@use '../stuff/mixins'as *;
 @use '../stuff/roots';
 
 
-.arena-card{
-    padding: 20px 0 0 30px;
+.arena {
 
-    &-header{
-        @include flex(row, flex-start, center, 30px);
-        
+}
+
+.arena-card {
+
+    &-header {
+        padding-bottom: 20px;
+
         background: var(--arena-bg-color);
-        border-bottom: 3px solid transparent; //нужен ли тут транспарент, если после он все равно будет перекрываться border-top?
+        border-bottom: 3px solid var(--border-color);
 
-        @each $name, $color in $difficulty-colors{
-            $bg-color: map.get($difficulty-bg-colors, $name);
+        &-link {
+            padding-left: 25px;
 
-            &.#{$name} {
-                @include difficulty-border($color, 4px, top);
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
 
-                h2 {
-                    @include difficulty-text($color);
-                }
+                color: var(--accent-purple);
 
-                .arena-rank{
-                    @include difficulty-text($color);
-                    @include difficulty-border($color, 2px);
-                    @include difficulty-bg($bg-color, 2)
+                text-shadow:
+                    0 0 5px var(--accent-purple),
+                    0 0 10px var(--accent-purple);
+
+                letter-spacing: 2px;
+            }
+        }
+
+        &-title {
+            @include flex(row, flex-start, baseline, 30px);
+
+            padding-bottom: 30px;
+
+
+            @each $name,
+            $color in $difficulty-colors {
+                $bg-color: map.get($difficulty-bg-colors, $name);
+
+                &.#{$name} {
+                    @include difficulty-border($color, 4px, top);
+
+                    h2 {
+                        font-size: 30px;
+
+                        padding-top: 20px;
+                        padding-left: 30px;
+
+                        @include difficulty-text($color);
+                    }
+
+                    .arena-rank {
+                        font-size: 18px;
+
+                        padding: 5px 15px 5px 15px;
+
+                        border-radius: 20px;
+
+                        @include difficulty-text($color);
+                        @include difficulty-border($color, 2px);
+                        @include difficulty-bg($bg-color, 0.3)
+                    }
                 }
             }
         }
-        // .arena-rank{
-        //     @each $name, $color in $difficulty-bg-colors{
-        //         &.#{$name} {
-        //             @include difficulty-bg($color, 0.1)
-        //         }
-        //     }
-        // }
     }
 
-    
-    
-    &-description{
+
+
+
+
+    &-description {
+        margin-left: 30px;
         margin-top: 40px;
+        margin-right: 30px;
+        padding: 20px;
 
         background: var(--bg-description);
         color: var(--text-description);
-        
-        @each $name, $color in $difficulty-colors{
+
+        // overflow-wrap: break-word;
+        // word-wrap: break-word;
+        // word-break: break-word;
+        // white-space: pre-wrap;
+
+        h3 {
+            padding-bottom: 20px;
+        }
+
+
+        @each $name,
+        $color in $difficulty-colors {
             .arena-card.#{$name} & {
                 @include difficulty-glow($color, 15px);
                 border: 1px solid $color;
+            }
+        }
+    }
+
+    // CODE EDITOR
+
+    .code-editor-container {
+        margin-top: 30px;
+        margin-left: 30px;
+        margin-right: 30px;
+
+        background: var(--bg-surface, #121218);
+
+        border: 1px solid var(--border-color, #2a2a3a);
+        border-radius: 8px;
+
+        overflow: hidden;
+
+        .editor-tabs {
+            display: flex;
+            background: var(--bg-surface-secondary, #1a1a24);
+            border-bottom: 1px solid var(--border-color, #2a2a3a);
+
+            .editor-tab {
+                padding: 12px 25px;
+                background: none;
+                border: none;
+                color: var(--text-secondary, #8f8f9c);
+                font-family: 'Orbitron', sans-serif;
+                font-size: 0.9rem;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                border-bottom: 2px solid transparent;
+
+                &:hover {
+                    color: var(--text-primary, #e0e0e0);
+                    background: rgba(45, 125, 255, 0.1);
+                }
+
+                &.active {
+                    color: var(--accent-blue, #2d7dff);
+                    border-bottom-color: var(--accent-blue, #2d7dff);
+                    background: var(--bg-surface, #121218);
+                }
+            }
+        }
+
+        .editor-content {
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+
+        // Стили для CodeMirror
+        .CodeMirror {
+            height: 300px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            background: #121218;
+
+            &-gutters {
+                background: #1a1a24;
+                border-right: 1px solid #2a2a3a;
+            }
+
+            &-linenumber {
+                color: #8f8f9c;
+            }
+        }
+
+        // Консоль вывода
+        .console-output {
+            height: 300px;
+            padding: 15px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: #8f8f9c;
+            background: #121218;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            line-height: 1.5;
+
+            .log {
+                color: #e0e0e0;
+            }
+
+            .error {
+                color: #ff3366;
+            }
+
+            .success {
+                color: #00cc88;
+            }
+
+            .warn {
+                color: #ffcc00;
+            }
+        }
+
+        .editor-controls {
+            padding: 15px;
+            background: #1a1a24;
+            border-top: 1px solid #2a2a3a;
+            display: flex;
+            gap: 15px;
+
+            .run-button {
+                background: linear-gradient(135deg, #00cc88, #2d7dff);
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                font-family: 'Orbitron', sans-serif;
+                font-size: 0.9rem;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 5px 15px rgba(0, 200, 150, 0.4);
+                }
             }
         }
     }

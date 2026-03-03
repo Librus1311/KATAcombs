@@ -1,10 +1,10 @@
-@use '../stuff/mixins' as *;
+@use '../stuff/mixins'as *;
 // @use '../stuff/mixins' as difficulty; пидагог дипсик меня подставил
 @use '../stuff/roots';
 
 .grimoire {
     height: 100vh;
-    width: 35%;
+    max-width: 35%;
 
     background: var(--bg-grimoire-list-color);
     border-right: 3px solid var(--border-color);
@@ -26,6 +26,9 @@
         padding: 20px 50px;
 
         background: var(--bg-grimoire-titleAndActive-item-color);
+        border-bottom: 3px solid var(--border-color);
+
+        @include flex( column, center, center, 20px);
 
         h2 {
             margin-top: 0;
@@ -33,10 +36,19 @@
             text-transform: uppercase;
 
             color: var(--electro-text-color);
+            text-shadow: 
+                0 0 5px var(--electro-text-color),
+                0 0 10px var(--electro-text-color);
+            letter-spacing: 3px;
         }
 
         span {
+            font-size: 16px;
+
+            text-transform: uppercase;
+
             color: var(--sub-text-color);
+
         }
     }
 
@@ -44,8 +56,12 @@
         padding-top: 20px;
 
         .grimoire-item {
+            width: 100%;
+
             margin-bottom: 20px;
             padding: 20px;
+
+            @include flex(column, flex-start, flex-start, 10px);
 
             border-radius: 10px;
 
@@ -53,43 +69,24 @@
 
             border-left: 10px solid transparent;
 
-            @each $name, $color in $difficulty-colors{
+            @each $name,
+            $color in $difficulty-colors {
                 &.#{$name} {
                     @include difficulty-border($color, 10px, left);
                 }
             }
 
-            // &.easy {
-            //     border-left-color: var(--green-color);
-            // }
+            .grimoire-item-difficulty {
 
-            // &.medium {
-            //     border-left-color: var(--yellow-color);
-            // }
+                font-size: 18px;
 
-            // &.hard {
-            //     border-left-color: var(--red-color);
-            // }
-
-            .grimoire-item-difficulty{
-                @each $name, $color in $difficulty-colors{
+                @each $name,
+                $color in $difficulty-colors {
                     &.#{$name} {
                         @include difficulty-text($color);
                     }
                 }
             }
-
-            // &.easy .grimoire-item-difficulty {
-            //     color: var(--green-color);
-            // }
-
-            // &.medium .grimoire-item-difficulty {
-            //     color: var(--yellow-color);
-            // }
-
-            // &.hard .grimoire-item-difficulty {
-            //     color: var(--red-color);
-            // }
 
             &:hover {
                 cursor: pointer;
@@ -117,7 +114,28 @@
                 color: var(--main-text-color);
             }
         }
+
+        .grimoire-item.active {
+            border-left: 10px solid var(--active-card-color) !important;
+            box-shadow:
+                0 0 10px var(--active-card-color),
+                0 0 20px var(--active-card-color),
+                0 0 30px var(--active-card-color);
+        }
     }
 
 
 }
+
+// TEXT STYLE
+
+// .grimoire-item-title {
+//     font-family: 'Orbitron', sans-serif;
+//     color: var(--text-primary);
+// }
+
+// .grimoire-item-description {
+//     font-family: 'JetBrains Mono', monospace;
+//     color: var(--text-secondary);
+// }
+
