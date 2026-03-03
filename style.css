@@ -10,9 +10,11 @@
   --green-color: #00cc88;
   --yellow-color: #ffcc00;
   --red-color: #ff3366;
+  --unknown-color: #8f8f9c;
   --bg-green-color: #00ffaa;
   --bg-yellow-color: #ffdd44;
   --bg-red-color: #ff5588;
+  --bg-unknown-color: #a0a0b0;
   --bg-description: #2a2322;
   --bg-examples: #1a1514;
   --text-description: #e8d8b6;
@@ -101,6 +103,9 @@ body {
 .grimoire .grimoire-list .grimoire-item.hard {
   border-left: 10px solid var(--red-color);
 }
+.grimoire .grimoire-list .grimoire-item.unknown {
+  border-left: 10px solid var(--unknown-color);
+}
 .grimoire .grimoire-list .grimoire-item .grimoire-item-difficulty {
   font-size: 18px;
 }
@@ -112,6 +117,9 @@ body {
 }
 .grimoire .grimoire-list .grimoire-item .grimoire-item-difficulty.hard {
   color: var(--red-color);
+}
+.grimoire .grimoire-list .grimoire-item .grimoire-item-difficulty.unknown {
+  color: var(--unknown-color);
 }
 .grimoire .grimoire-list .grimoire-item:hover {
   cursor: pointer;
@@ -175,7 +183,7 @@ body {
   border-radius: 20px;
   color: var(--green-color);
   border: 2px solid var(--green-color);
-  background-color: rgba(0, 255, 170, 0.3);
+  background-color: rgba(var(--bg-green-color), 0.3);
 }
 .arena-card-header-title.medium {
   border-top: 4px solid var(--yellow-color);
@@ -192,7 +200,7 @@ body {
   border-radius: 20px;
   color: var(--yellow-color);
   border: 2px solid var(--yellow-color);
-  background-color: rgba(255, 221, 68, 0.3);
+  background-color: rgba(var(--bg-yellow-color), 0.3);
 }
 .arena-card-header-title.hard {
   border-top: 4px solid var(--red-color);
@@ -209,7 +217,24 @@ body {
   border-radius: 20px;
   color: var(--red-color);
   border: 2px solid var(--red-color);
-  background-color: rgba(255, 85, 136, 0.3);
+  background-color: rgba(var(--bg-red-color), 0.3);
+}
+.arena-card-header-title.unknown {
+  border-top: 4px solid var(--unknown-color);
+}
+.arena-card-header-title.unknown h2 {
+  font-size: 30px;
+  padding-top: 20px;
+  padding-left: 30px;
+  color: var(--unknown-color);
+}
+.arena-card-header-title.unknown .arena-rank {
+  font-size: 18px;
+  padding: 5px 15px 5px 15px;
+  border-radius: 20px;
+  color: var(--unknown-color);
+  border: 2px solid var(--unknown-color);
+  background-color: rgba(var(--bg-unknown-color), 0.3);
 }
 .arena-card-description {
   margin: 40px 30px 0 30px;
@@ -242,6 +267,10 @@ body {
 .arena-card.hard .arena-card-description {
   box-shadow: 0 0 15px var(--red-color);
   border: 1px solid var(--red-color);
+}
+.arena-card.unknown .arena-card-description {
+  box-shadow: 0 0 15px var(--unknown-color);
+  border: 1px solid var(--unknown-color);
 }
 .arena-card .code-editor-container {
   margin-top: 30px;

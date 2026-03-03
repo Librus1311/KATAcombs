@@ -34,7 +34,7 @@
             "description": "Fix the function",
             "examples": "",
             "myAnswer": "function res(num) {\n    return num + 5;\n}\n\nconsole.log(res(5));",
-            "kyu": "8 kyu"
+            "kyu": "5 kyu"
         },
         {
             "id": 5,
@@ -77,7 +77,7 @@
             "link": "https://www.codewars.com/kata/5dd462a573ee6d0014ce715b",
             "name": "Check same case",
             "description": "Write a function that will check if two given characters are the same case. If either of the characters is not a letter, return -1. If both characters are the same case, return 1. If both characters are letters, but not the same case, return 0",
-            "examples":"'a' and 'g' returns 1 <br>// 'A' and 'C' returns 1 <br>// 'b' and 'G' returns 0 <br>// 'B' and 'g' returns 0 <br>// '0' and '?' returns -1",
+            "examples":"// 'a' and 'g' returns 1 <br>// 'A' and 'C' returns 1 <br>// 'b' and 'G' returns 0 <br>// 'B' and 'g' returns 0 <br>// '0' and '?' returns -1",
             "myAnswer": "function letters(prompt1, prompt2) {\n    const isLetter = (str) => typeof str === 'string' && /^[a-zA-Zа-яА-ЯёЁ]$/.test(str);\n    if (!isLetter(prompt1) || !isLetter(prompt2)) {\n        return -1;\n    }\n    if (prompt1 === prompt1.toUpperCase() && prompt2 === prompt2.toUpperCase()) {\n        return 1;\n    } else {\n        return 0;\n    }\n}\n\nconsole.log(letters('a', 'b'));\nconsole.log(letters('A', 0));\nconsole.log(letters('A', 'B'));",
             "kyu": "8 kyu"
         },

@@ -17,7 +17,8 @@
 $difficulty-colors: (
     'easy': var(--green-color),
     'medium': var(--yellow-color),
-    'hard': var(--red-color)
+    'hard': var(--red-color),
+    'unknown': var(--unknown-color)
 );
 
 @mixin difficulty-text($color) {
@@ -39,9 +40,15 @@ $difficulty-colors: (
 }
 
 $difficulty-bg-colors: (
-    'easy' : #00ffaa,
-    'medium' : #ffdd44,
-    'hard' : #ff5588
+    // 'easy' : #00ffaa,
+    // 'medium' : #ffdd44,
+    // 'hard' : #ff5588,
+    // 'unknown' : #a0a0b0
+
+    'easy': var(--bg-green-color),
+    'medium': var(--bg-yellow-color),
+    'hard': var(--bg-red-color),
+    'unknown': var(--bg-unknown-color)
 );
 
 @mixin difficulty-bg($color, $opacity: 0.1) {
