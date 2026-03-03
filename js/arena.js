@@ -33,7 +33,12 @@ function createArenaCard(kata) {
         <div class="arena-card-description ${difficulty}">
             <h3>Description</h3>
             <p>${kata.description}</p>
-            ${kata.examples ? `<pre class="arena-examples">${kata.examples}</pre>` : ''}
+            ${kata.examples ? `
+                <div class = "arena-card-description-examples">
+                    <h4>Examples: </h4>
+                    <p class = "arena-examples-content"> ${kata.examples}</p>
+                </div>
+            ` : ''}
         </div>
 
         <!-- ===== ИНТЕРАКТИВНЫЙ РЕДАКТОР (тупо ctrl c + ctrl v, тут уж мои полномочия - все) ===== -->

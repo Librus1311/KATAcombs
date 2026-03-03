@@ -14,18 +14,13 @@
   --bg-yellow-color: #ffdd44;
   --bg-red-color: #ff5588;
   --bg-description: #2a2322;
+  --bg-examples: #1a1514;
   --text-description: #e8d8b6;
   --main-text-color: #e0e0e0;
   --sub-text-color: #8f8f9c;
   --active-card-text-color: #b0b0c0;
   --desc-text-color: #e8d8b6;
   --electro-text-color: #2d7dff;
-  --gr-green-strip-color: linear-gradient(90deg, #00cc88, #00ffaa);
-  --gr-green-text-color: linear-gradient(135deg, #00cc88, #00ffaa);
-  --gr-yellow-strip-color: linear-gradient(90deg, #ffcc00, #ffdd44);
-  --gr-yellow-strip-color: linear-gradient(135deg, #ffcc00, #ffdd44);
-  --gr-red-strip-color: linear-gradient(90deg, #ff3366, #ff5588);
-  --gr-red-strip-color: linear-gradient(135deg, #ff3366, #ff5588);
   --text-primary: #e0e0e0;
   --text-secondary: #8f8f9c;
   --text-description: #e8d8b6;
@@ -217,15 +212,24 @@ body {
   background-color: rgba(255, 85, 136, 0.3);
 }
 .arena-card-description {
-  margin-left: 30px;
-  margin-top: 40px;
-  margin-right: 30px;
+  margin: 40px 30px 0 30px;
   padding: 20px;
   background: var(--bg-description);
   color: var(--text-description);
 }
 .arena-card-description h3 {
   padding-bottom: 20px;
+}
+.arena-card-description p {
+  text-wrap: pretty;
+}
+.arena-card-description-examples {
+  margin-top: 10px;
+  padding: 20px;
+  background: var(--bg-examples);
+}
+.arena-card-description-examples h4 {
+  padding-bottom: 10px;
 }
 .arena-card.easy .arena-card-description {
   box-shadow: 0 0 15px var(--green-color);
@@ -374,7 +378,8 @@ body {
 
 .arena h2,
 .arena span,
-.arena h3 {
+.arena h3,
+.arena h4 {
   font-family: "Orbitron", sans-serif;
 }
 .arena a {
