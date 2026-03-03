@@ -133,6 +133,9 @@ body {
 .grimoire .grimoire-list .grimoire-item.hard:hover {
   box-shadow: 0px 0 10px var(--red-color);
 }
+.grimoire .grimoire-list .grimoire-item.unknown:hover {
+  box-shadow: 0px 0 10px var(--unknown-color);
+}
 .grimoire .grimoire-list .grimoire-item-description {
   color: var(--sub-text-color);
 }
