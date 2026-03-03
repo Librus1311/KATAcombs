@@ -31,7 +31,7 @@
             "id": 4,
             "link": "https://www.codewars.com/kata/56200d610758762fb0000002",
             "name": "Grasshopper - Basic Function Fixer",
-            "description": "Fix the function",
+            "description": "I created this function to add five to any number that was passed in to it and return the new value. It doesn't throw any errors but it returns the wrong number. Can you help me fix the function?",
             "examples": "",
             "myAnswer": "function res(num) {\n    return num + 5;\n}\n\nconsole.log(res(5));",
             "kyu": "5 kyu"
@@ -107,6 +107,33 @@
             "examples": "case\treturn<br> name equals owner\t'Hello boss'<br>otherwise\t'Hello guest'",
             "myAnswer": "function greetings(name, owner) {\n    return name === owner ? 'Hello boss' : 'Hello guest';\n}\n\nconsole.log(greetings('bob', 'bob'));\nconsole.log(greetings('bob', 'ann'));",
             "kyu": "8 kyu"
+        },
+        {
+            "id": 13,
+            "link": "https://www.codewars.com/kata/5d9f95424a336600278a9632",
+            "name": "Sum of powers of 2",
+            "description": "Given a number n, you should find a set of numbers for which the sum equals n. This set must consist exclusively of values that are a power of 2 (eg: 2^0 => 1, 2^1 => 2, 2^2 => 4, ...). <br>The function powers takes a single parameter, the number n, and should return an array of unique numbers.",
+            "examples": "The function will always receive a valid input: any positive integer between 1 and the max integer value for your language (eg: for JavaScript this would be 9007199254740991 otherwise known as Number.MAX_SAFE_INTEGER). <br> The function should return an array of numbers that are a power of 2 (2^x = y). <br> Each member of the returned array should be unique. (eg: the valid answer for powers(2) is [2], not [1, 1]) <br> Members should be sorted in ascending order (small -> large). (eg: the valid answer for powers(6) is [2, 4], not [4, 2])",
+            "myAnswer": "function powers(n) {\n    let arr = [];\n    while (n > 0) {\n        let e = Math.floor(Math.log2(n));\n        arr.push(Math.pow(2, e));\n        n = n - 2**e;\n    }\n    arr.sort((a, b) => a - b);\n    return arr;\n}\n\nconst result = powers(30);\nconsole.log(result);",
+            "kyu": "7 kyu"
+        },
+        {
+            "id": 14,
+            "link": "https://www.codewars.com/kata/5296455e4fe0cdf2e000059f",
+            "name": "Basic Calculator",
+            "description": "Write a function called that takes 3 values. The first and third values are numbers. The second value is a character. <br> - If the character is '+' , '-', '*', or '/', the function will return the result of the corresponding mathematical function on the two numbers. <br> - If the string is not one of the specified characters, the function should return null (throw an ArgumentException in C#). <br> - Keep in mind, you cannot divide by zero. If an attempt to divide by zero is made, return null / None (Python) / throw an ArgumentException (C#).",
+            "examples": "(2,'+', 4) --> 6 <br> (6,'-', 1.5) --> 4.5 <br> (-4,'*', 8) --> -32 <br> (49,'/', -7) --> -7 <br> (8,'m', 2) --> null <br> (4,'/',0) --> null",
+            "myAnswer": "function calc(arg1, sym, arg2) {\n    if (!\"+-*/\".includes(sym)) {\n        return null;\n    }\n    if (sym === \"/\" && arg2 === 0) {\n        return null;\n    }\n\n    switch (sym) {\n        case '+':\n            return arg1 + arg2;\n        case '-':\n            return arg1 - arg2;\n        case '*':\n            return arg1 * arg2;\n        case '/':\n            return arg1 / arg2;\n    }\n}\n\nconsole.log(calc(1, \"+\", 3));\nconsole.log(calc(1, \"-\", 3));\nconsole.log(calc(1, \"*\", 3));\nconsole.log(calc(1, \"/\", 3));\nconsole.log(calc(1, \"/\", 0));\nconsole.log(calc(1, \"%\", 3));",
+            "kyu": "7 kyu"
+        },
+        {
+            "id": 15,
+            "link": "https://www.codewars.com/kata/56747fd5cb988479af000028",
+            "name": "Get the Middle Character",
+            "description": "You are going to be given a non-empty string. Your job is to return the middle character(s) of the string.<br> - If the string's length is odd, return the middle character.<br> - If the string's length is even, return the middle 2 characters.",
+            "examples": "'test' --> 'es'<br>'testing' --> 't'<br>'middle' --> 'dd'<br>'A' --> 'A'",
+            "myAnswer": "function strLenght(smth) {\n    if (smth.length % 2 === 0) {\n        let sym1 = smth[smth.length / 2 - 1];\n        let sym2 = smth[smth.length / 2];\n        return sym1 + sym2;\n    } else {\n        let sym1 = smth[Math.floor(smth.length / 2)];\n        return sym1;\n    }\n}\n\nconsole.log(strLenght(\"Bebra\"));\nconsole.log(strLenght(\"Pivo\"));",
+            "kyu": "7 kyu"
         }
     ]
 }
