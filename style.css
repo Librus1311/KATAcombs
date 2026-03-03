@@ -186,7 +186,7 @@ body {
   border-radius: 20px;
   color: var(--green-color);
   border: 2px solid var(--green-color);
-  background-color: rgba(var(--bg-green-color), 0.3);
+  background-color: rgba(0, 255, 170, 0.3);
 }
 .arena-card-header-title.medium {
   border-top: 4px solid var(--yellow-color);
@@ -203,7 +203,7 @@ body {
   border-radius: 20px;
   color: var(--yellow-color);
   border: 2px solid var(--yellow-color);
-  background-color: rgba(var(--bg-yellow-color), 0.3);
+  background-color: rgba(255, 221, 68, 0.3);
 }
 .arena-card-header-title.hard {
   border-top: 4px solid var(--red-color);
@@ -220,7 +220,7 @@ body {
   border-radius: 20px;
   color: var(--red-color);
   border: 2px solid var(--red-color);
-  background-color: rgba(var(--bg-red-color), 0.3);
+  background-color: rgba(255, 85, 136, 0.3);
 }
 .arena-card-header-title.unknown {
   border-top: 4px solid var(--unknown-color);
@@ -237,7 +237,7 @@ body {
   border-radius: 20px;
   color: var(--unknown-color);
   border: 2px solid var(--unknown-color);
-  background-color: rgba(var(--bg-unknown-color), 0.3);
+  background-color: rgba(160, 160, 176, 0.3);
 }
 .arena-card-description {
   margin: 40px 30px 0 30px;
