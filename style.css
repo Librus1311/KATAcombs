@@ -431,7 +431,7 @@ body {
 .grimoire p {
   font-family: "Rajdhani", sans-serif;
 }
-.grimoire span {
+.grimoire span, .grimoire option, .grimoire #difficulty-filter {
   font-family: "JetBrains Mono", sans-serif;
 }
 
