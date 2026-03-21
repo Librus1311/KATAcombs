@@ -78,6 +78,20 @@ body {
   text-transform: uppercase;
   color: var(--sub-text-color);
 }
+.grimoire .grimoire-header #difficulty-filter {
+  padding: 7px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-grimoire-list-color);
+  color: var(--accent-blue);
+}
+.grimoire .grimoire-header #difficulty-filter:hover {
+  border-color: var(--accent-blue, #2d7dff);
+  box-shadow: 0 0 8px var(--accent-blue);
+}
+.grimoire .grimoire-header #difficulty-filter:focus {
+  outline: none;
+}
 .grimoire .grimoire-list {
   padding-top: 20px;
 }
@@ -106,6 +120,13 @@ body {
 .grimoire .grimoire-list .grimoire-item.unknown {
   border-left: 10px solid var(--unknown-color);
 }
+.grimoire .grimoire-list .grimoire-item .grimoire-item-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 .grimoire .grimoire-list .grimoire-item .grimoire-item-difficulty {
   font-size: 18px;
 }
@@ -121,20 +142,23 @@ body {
 .grimoire .grimoire-list .grimoire-item .grimoire-item-difficulty.unknown {
   color: var(--unknown-color);
 }
+.grimoire .grimoire-list .grimoire-item .grimoire-item-id {
+  color: var(--main-text-color);
+}
 .grimoire .grimoire-list .grimoire-item:hover {
   cursor: pointer;
 }
 .grimoire .grimoire-list .grimoire-item.easy:hover {
-  box-shadow: 0px 0 10px var(--green-color);
+  box-shadow: 0 0 10px var(--green-color);
 }
 .grimoire .grimoire-list .grimoire-item.medium:hover {
-  box-shadow: 0px 0 10px var(--yellow-color);
+  box-shadow: 0 0 10px var(--yellow-color);
 }
 .grimoire .grimoire-list .grimoire-item.hard:hover {
-  box-shadow: 0px 0 10px var(--red-color);
+  box-shadow: 0 0 10px var(--red-color);
 }
 .grimoire .grimoire-list .grimoire-item.unknown:hover {
-  box-shadow: 0px 0 10px var(--unknown-color);
+  box-shadow: 0 0 10px var(--unknown-color);
 }
 .grimoire .grimoire-list .grimoire-item-description {
   color: var(--sub-text-color);
@@ -146,6 +170,9 @@ body {
 .grimoire .grimoire-list .grimoire-item.active {
   border-left: 10px solid var(--active-card-color) !important;
   box-shadow: 0 0 10px var(--active-card-color), 0 0 20px var(--active-card-color), 0 0 30px var(--active-card-color);
+}
+.grimoire .grimoire-list .grimoire-item.inactive {
+  display: none !important;
 }
 
 .arena-card-header {
@@ -418,7 +445,7 @@ body {
   font-family: "JetBrains Mono", sans-serif;
 }
 .arena p {
-  font-family: "Cinzel", sans-serif;
+  font-family: "JetBrains Mono", sans-serif;
   font-size: 16px;
 }
 

@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=JetBrains+Mono:wght@300;400;500&family=Rajdhani:wght@400;500;600&family=Cinzel:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=JetBrains+Mono:wght@300;400;500&family=Rajdhani:wght@400;500;600&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
@@ -17,7 +17,6 @@
     <script src="js/grimoire.js" defer></script>
     <script src="js/arena.js" defer></script>
     <script src="js/script.js" defer></script>
-    <!-- <script src="js/editor.js" defer></script> -->
     <!-- CodeMirror -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/dracula.min.css">
@@ -32,6 +31,14 @@
                 <div class="grimoire-header">
                     <h2>katacombs</h2>
                     <span class="grimoire-count" id="task-count">Kata quests</span>
+                    <div class="grimoire-header-btns">
+                        <select id="difficulty-filter">
+                            <option value="all">All kyu</option>
+                            <option value="easy">Easy (8 kyu)</option>
+                            <option value="medium">Medium (7 kyu)</option>
+                            <option value="hard">Hard (6 kyu)</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="grimoire-list" id="grimoire-list">
                     <!-- Сюда будут загружаться элементы списка -->

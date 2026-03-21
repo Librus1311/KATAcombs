@@ -1,5 +1,4 @@
 @use '../stuff/mixins'as *;
-// @use '../stuff/mixins' as difficulty; пидагог дипсик меня подставил
 @use '../stuff/roots';
 
 .grimoire {
@@ -10,8 +9,6 @@
     border-right: 3px solid var(--border-color);
 
     @include flex(column);
-    // display: flex;
-    // flex-direction: column;
 
     &-list {
         padding: 0 20px;
@@ -28,7 +25,7 @@
         background: var(--bg-grimoire-titleAndActive-item-color);
         border-bottom: 3px solid var(--border-color);
 
-        @include flex( column, center, center, 20px);
+        @include flex(column, center, center, 20px);
 
         h2 {
             margin-top: 0;
@@ -36,7 +33,7 @@
             text-transform: uppercase;
 
             color: var(--electro-text-color);
-            text-shadow: 
+            text-shadow:
                 0 0 5px var(--electro-text-color),
                 0 0 10px var(--electro-text-color);
             letter-spacing: 3px;
@@ -48,7 +45,26 @@
             text-transform: uppercase;
 
             color: var(--sub-text-color);
+        }
 
+        #difficulty-filter {
+            padding: 7px;
+
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+
+            background: var(--bg-grimoire-list-color);
+            color: var(--accent-blue);
+        }
+
+        #difficulty-filter:hover {
+            border-color: var(--accent-blue, #2d7dff);
+            box-shadow: 0 0 8px var(--accent-blue);
+        }
+
+        #difficulty-filter:focus {
+            outline: none;
+           
         }
     }
 
@@ -76,6 +92,12 @@
                 }
             }
 
+            .grimoire-item-footer {
+                width: 100%;
+
+                @include flex (row, space-between, center)
+            }
+
             .grimoire-item-difficulty {
 
                 font-size: 18px;
@@ -88,24 +110,21 @@
                 }
             }
 
+            .grimoire-item-id {
+                color: var(--main-text-color);
+            }
+
+
+
             &:hover {
                 cursor: pointer;
             }
 
-            &.easy:hover {
-                box-shadow: 0px 0 10px var(--green-color);
-            }
-
-            &.medium:hover {
-                box-shadow: 0px 0 10px var(--yellow-color);
-            }
-
-            &.hard:hover {
-                box-shadow: 0px 0 10px var(--red-color);
-            }
-
-            &.unknown:hover {
-                box-shadow: 0px 0 10px var(--unknown-color);
+            @each $name,
+            $color in $difficulty-colors {
+                &.#{$name}:hover {
+                    box-shadow: 0 0 10px $color;
+                }
             }
 
             &-description {
@@ -126,20 +145,11 @@
                 0 0 20px var(--active-card-color),
                 0 0 30px var(--active-card-color);
         }
+
+        .grimoire-item.inactive {
+            display: none !important;
+        }
     }
 
 
 }
-
-// TEXT STYLE
-
-// .grimoire-item-title {
-//     font-family: 'Orbitron', sans-serif;
-//     color: var(--text-primary);
-// }
-
-// .grimoire-item-description {
-//     font-family: 'JetBrains Mono', monospace;
-//     color: var(--text-secondary);
-// }
-

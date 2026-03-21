@@ -16,7 +16,7 @@
             "description": "The wide-mouth frog is particularly interested in the eating habits of other creatures. He just can't stop asking the creatures he encounters what they like to eat. But, then he meets the alligator who just LOVES to eat wide-mouthed frogs! When he meets the alligator, it then makes a tiny mouth. Your goal in this kata is to create complete the mouth_size method this method takes one argument animal which corresponds to the animal encountered by the frog. If this one is an alligator (case-insensitive) return small otherwise return wide.",
             "examples": "",
             "myAnswer": "function mouthSize(animal) {\n    const lowerCaseAnimal = animal.toLowerCase();\n    return lowerCaseAnimal === 'alligator' ? 'small' : 'wide';\n}\n\nconsole.log(mouthSize('alligator'));\nconsole.log(mouthSize('ne alligator'));",
-            "kyu": "7 kyu"
+            "kyu": "8 kyu"
         },
         {
             "id": 3,
@@ -25,7 +25,7 @@
             "description": "Let's imagine we have a popular online RPG. A player begins with a score of 0 in class E5. A1 is the highest level a player can achieve. Now let's say the players wants to rank up to class E4. To do so the player needs to achieve at least 100 points to enter the qualifying stage. Write a script that will check to see if the player has achieved at least 100 points in his class. If so, he enters the qualifying stage. In that case, we return, \"Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up.\". Otherwise return, False/false (according to the language in use).",
             "examples": "",
             "myAnswer": "function rank(score) {\n    return score >= 100 ? 'Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up.' : false;\n}\n\nconsole.log(rank(120));\nconsole.log(rank(99));",
-            "kyu": "6 kyu"
+            "kyu": "8 kyu"
         },
         {
             "id": 4,
@@ -34,7 +34,7 @@
             "description": "I created this function to add five to any number that was passed in to it and return the new value. It doesn't throw any errors but it returns the wrong number. Can you help me fix the function?",
             "examples": "",
             "myAnswer": "function res(num) {\n    return num + 5;\n}\n\nconsole.log(res(5));",
-            "kyu": "5 kyu"
+            "kyu": "8 kyu"
         },
         {
             "id": 5,
@@ -77,8 +77,8 @@
             "link": "https://www.codewars.com/kata/5dd462a573ee6d0014ce715b",
             "name": "Check same case",
             "description": "Write a function that will check if two given characters are the same case. If either of the characters is not a letter, return -1. If both characters are the same case, return 1. If both characters are letters, but not the same case, return 0",
-            "examples":"// 'a' and 'g' returns 1 <br>// 'A' and 'C' returns 1 <br>// 'b' and 'G' returns 0 <br>// 'B' and 'g' returns 0 <br>// '0' and '?' returns -1",
-            "myAnswer": "function letters(prompt1, prompt2) {\n    const isLetter = (str) => typeof str === 'string' && /^[a-zA-Zа-яА-ЯёЁ]$/.test(str);\n    if (!isLetter(prompt1) || !isLetter(prompt2)) {\n        return -1;\n    }\n    if (prompt1 === prompt1.toUpperCase() && prompt2 === prompt2.toUpperCase()) {\n        return 1;\n    } else {\n        return 0;\n    }\n}\n\nconsole.log(letters('a', 'b'));\nconsole.log(letters('A', 0));\nconsole.log(letters('A', 'B'));",
+            "examples": "// 'a' and 'g' returns 1 <br>// 'A' and 'C' returns 1 <br>// 'b' and 'G' returns 0 <br>// 'B' and 'g' returns 0 <br>// '0' and '?' returns -1",
+            "myAnswer": "function letters(prompt1, prompt2) {\n    const isLetter = (str) => typeof str === 'string' && /^[a-zA-Zа-яА-ЯёЁ]$/.test(str);\n    if (!isLetter(prompt1) || !isLetter(prompt2)) {\n        return -1;\n    }\n\n    const isUpper1 = prompt1 === prompt1.toUpperCase();\n    const isUpper2 = prompt2 === prompt2.toUpperCase();\n\n    if (isUpper1 === isUpper2) {\n        return 1;\n    } else {\n        return 0;\n    }\n}\n\nconsole.log(letters(\"a\", \"b\"));\nconsole.log(letters('A', 0));\nconsole.log(letters('A', 'B'));",
             "kyu": "8 kyu"
         },
         {
@@ -87,14 +87,14 @@
             "name": "Invert values",
             "description": "Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.",
             "examples": "// [1, 2, 3, 4, 5] --> [-1, -2, -3, -4, -5] <br> // [1, -2, 3, -4, 5] --> [-1, 2, -3, 4, -5] <br> // [] --> []",
-            "myAnswer": "const numbersArray = [-1, 2, -3, 4, 5];\n\nfunction invertArray(numbersArray) {\n    return numbersArray.map((num) => num === 0 ? 0 : -num);\n}\n\nconsole.log(invertArray([-1, 2, -3, 4, 5, 0]));\nconsole.log(invertArray([]));",
+            "myAnswer": "const numbersArray = [-1, 2, -3, 4, 5];\n\nfunction invertArray(numbersArray) {\n    return numbersArray.map(num => -num);\n}\n\nconsole.log(invertArray([-1, 2, -3, 4, 5, 0]));\nconsole.log(invertArray([]));",
             "kyu": "8 kyu"
         },
         {
             "id": 11,
             "link": "https://www.codewars.com/kata/559f860f8c0d6c7784000119",
             "name": "Are there any arrows left?",
-            "description": "You have a quiver of arrows, but some have been damaged. The quiver contains arrows with an optional range information (different types of targets are positioned at different ranges), so each item is an arrow.You need to verify that you have some good ones left, in order to prepare for battle:<br>If an arrow in the quiver does not have a damaged status, it means it's new. The expected result is a boolean, indicating whether you have any good arrows left.", 
+            "description": "You have a quiver of arrows, but some have been damaged. The quiver contains arrows with an optional range information (different types of targets are positioned at different ranges), so each item is an arrow.You need to verify that you have some good ones left, in order to prepare for battle:<br>If an arrow in the quiver does not have a damaged status, it means it's new. The expected result is a boolean, indicating whether you have any good arrows left.",
             "examples": "anyArrows([{range: 5}, {range: 10, damaged: true}, {damaged: true}])",
             "myAnswer": "function anyArrows(arrows) {\n    return arrows.some(arrow => arrow.damaged !== true);\n}\n\nconsole.log(anyArrows([{range: 5}, {range: 10, damaged: true}, {damaged: true}]));",
             "kyu": "8 kyu"
@@ -134,6 +134,141 @@
             "examples": "'test' --> 'es'<br>'testing' --> 't'<br>'middle' --> 'dd'<br>'A' --> 'A'",
             "myAnswer": "function strLenght(smth) {\n    if (smth.length % 2 === 0) {\n        let sym1 = smth[smth.length / 2 - 1];\n        let sym2 = smth[smth.length / 2];\n        return sym1 + sym2;\n    } else {\n        let sym1 = smth[Math.floor(smth.length / 2)];\n        return sym1;\n    }\n}\n\nconsole.log(strLenght(\"Bebra\"));\nconsole.log(strLenght(\"Pivo\"));",
             "kyu": "7 kyu"
+        },
+        {
+            "id": 16,
+            "link": "https://www.codewars.com/kata/58356a94f8358058f30004b5",
+            "name": "Drone Fly-By",
+            "description": "The other day I saw an amazing video where a guy hacked some wifi controlled lightbulbs by flying a drone past them. Brilliant.<br>In this kata we will recreate that stunt... sort of.<br>You will be given two strings: lamps and drone. lamps represents a row of lamps, currently off, each represented by x. When these lamps are on, they should be represented by o.<br>The drone string represents the position of the drone T (any better suggestion for character??) and its flight path up until this point =. The drone always flies left to right, and always begins at the start of the row of lamps. Anywhere the drone has flown, including its current position, will result in the lamp at that position switching on.<br>Return the resulting lamps string.",
+            "examples": "",
+            "myAnswer": "function lampsOn(lamps, drone) {\n    let flightLength = drone.length;\n    let res = 'o'.repeat(flightLength) + 'x'.repeat(lamps.length - flightLength);\n    return res;\n}\n\nconsole.log(lampsOn(\"xxxxxxx\", \"===T\"));",
+            "kyu": "7 kyu"
+        },
+        {
+            "id": 17,
+            "link": "https://www.codewars.com/kata/59de795c289ef9197f000c48",
+            "name": "Remove BMW",
+            "description": "Remove all letters 'b', 'w', 'm' (case insensitive) from the string.",
+            "examples": "new Error('This program only works for text.');",
+            "myAnswer": "function fuckBMW(str) {\n    let newStr = str.split(\"\");\n    newStr = newStr.filter(x => (x !== \"b\" && x !== \"B\" && x !== \"w\" && x !== \"W\" && x !== \"m\" && x !== \"M\"));\n    newStr = newStr.join(\"\");\n    return newStr;\n}\n\nconsole.log(fuckBMW(\"QBQwQm\"));",
+            "kyu": "7 kyu"
+        },
+        {
+            "id": 18,
+            "link": "https://www.codewars.com/kata/5735956413c2054a680009ec",
+            "name": "methods of Math---kata author's lover:random()",
+            "description": "Maybe you don't often use random() when you're dealing with Kata, but every qualified Kata can not be missing random(). Because random testcase is the most basic anti cheating measure. A variety of testcases also help authors identify potential problems. If you also want to create a new Kata and become an author, please follow me to learn about random(). The definitions and detailed information: random() Let's learn the usage of random() through examples: random() does not require any parameters, and its return value is a decimal between 0 and 1:",
+            "examples": "checkSame(5) → array of 5 unique random codes",
+            "myAnswer": "function rndCode() {\n    const letArr = [\"A\", \"B\", \"C\", \"D\", \"E\", \"F\", \"G\", \"H\", \"I\", \"J\", \"K\", \"L\", \"M\"];\n    const numArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];\n    const symArr = [\"~\", \"!\", \"@\", \"#\", \"$\", \"%\", \"^\", \"&\", \"*\"];\n    let randomArr = [];\n\n    for (let i = 0; i < 2; i++) {\n        const randomIndex1 = Math.floor(Math.random() * letArr.length);\n        randomArr.push(letArr[randomIndex1]);\n    }\n    for (let i = 0; i < 4; i++) {\n        const randomIndex2 = Math.floor(Math.random() * numArr.length);\n        randomArr.push(numArr[randomIndex2]);\n    }\n    for (let i = 0; i < 2; i++) {\n        const randomIndex3 = Math.floor(Math.random() * symArr.length);\n        randomArr.push(symArr[randomIndex3]);\n    }\n    randomArr = randomArr.join(\"\");\n\n    return randomArr;\n}\n\nfunction checkSame(amount) {\n    let checkArr = [];\n    while (checkArr.length < amount) {\n        let newArr = rndCode();\n        if (!checkArr.includes(newArr)) {\n            checkArr.push(newArr);\n        }\n    }\n    return checkArr;\n}\n\nconsole.log(checkSame(5));",
+            "kyu": "7 kyu"
+        },
+        {
+            "id": 19,
+            "link": "https://www.codewars.com/kata/686fd320adc800ab627089c2",
+            "name": "Shortest direction on circle",
+            "description": "Calculate the shortest angular distance between two angles (in degrees), handling wrap-around (0-360).",
+            "examples": "radLength(90, 100) → 10<br>radLength(90, 60) → -30<br>radLength(350, 10) → 20",
+            "myAnswer": "function radLength(a, b) {\n    let trueA = ((a % 360) + 360) % 360;\n    let trueB = ((b % 360) + 360) % 360;\n    let distance = trueB - trueA;\n    if (distance > 180) {\n        return distance - 360;\n    } else if (distance < -180) {\n        return distance + 360;\n    } else {\n        return distance;\n    }\n}\n\nconsole.log(radLength(90, 100));\nconsole.log(radLength(90, 60));",
+            "kyu": "7 kyu"
+        },
+        {
+            "id": 20,
+            "link": "https://www.codewars.com/kata/5a4138acf28b82aa43000117",
+            "name": "Maximum Product",
+            "description": "Given an array of integers , Find the maximum product obtained from multiplying 2 adjacent numbers in the array. Note that the array size is at least 2 and consists a mixture of positive, negative integers and also zeroes.",
+            "examples": "numArr([-23, 4, -5, 99, -27, 329, -2, 7, -921]) → -14",
+            "myAnswer": "function numArr(smth) {\n    let a = -Infinity;\n    for (let i = 0; i < smth.length - 1; i++) {\n        if (a < smth[i] * smth[i + 1]) {\n            a = smth[i] * smth[i + 1];\n        }\n    }\n    return a;\n}\n\nconsole.log(numArr([-23, 4, -5, 99, -27, 329, -2, 7, -921]));",
+            "kyu": "7 kyu"
+        },
+        {
+            "id": 21,
+            "link": "https://www.codewars.com/kata/5912ded3f9f87fd271000120",
+            "name": "Guess the Word: Count Matching Letters",
+            "description": "Count how many letters in the guessed word match the correct word at the same position. If lengths differ, log an error.",
+            "examples": "guessWord('cat', 'bob') → 0<br>guessWord('cat', 'car') → 2",
+            "myAnswer": "function guessWord(correct, check) {\n    let a = 0;\n    if (correct.length === check.length) {\n        for (let i = 0; i < check.length; i++) {\n            if (check[i] === correct[i]) {\n                a++;\n            }\n        }\n        if (a === 0) {\n            return 0;\n        }\n    } else {\n        console.log(\"неверная длинна\");\n    }\n    return a;\n}\n\nconsole.log(guessWord(\"cat\", \"bob\"));",
+            "kyu": "7 kyu"
+        },
+        {
+            "id": 22,
+            "link": "https://www.codewars.com/kata/5a05fe8a06d5b6208e00010b",
+            "name": "Sequence to 1",
+            "description": "Given the number n, return the sequence of numbers from n to 1.",
+            "examples": "till1(5) → [5,4,3,2,1]<br>till1(-4) → [-4,-3,-2,-1,0,1]",
+            "myAnswer": "function till1(n) {\n    let arr = [];\n    while (n !== 1) {\n        arr.push(n);\n        n = n > 1 ? n - 1 : n + 1;\n    }\n    arr.push(1);\n    return arr;\n}\n\nconsole.log(till1(5));\nconsole.log(till1(-4));",
+            "kyu": "7 kyu"
+        },
+        {
+            "id": 23,
+            "link": "https://www.codewars.com/kata/61c78b57ee4be50035d28d42",
+            "name": "Merge overlapping strings",
+            "description": "This kata requires you to write a function which merges two strings together. It does so by merging the end of the first string with the start of the second string together when they are an exact match.",
+            "examples": "split('abcde', 'cdefgh') → 'abcdefgh'<br>split('abaab', 'aabab') → 'abaabab'<br>split('abc', 'def') → 'abcdef'<br>split('abc', 'abc') → 'abc'",
+            "myAnswer": "function split(str1, str2) {\n    let length = 0;\n    for (let i = 1; i <= Math.min(str1.length, str2.length); i++) {\n        if (str1.slice(-i) === str2.slice(0, i)) {\n            length = i;\n        }\n    }\n    return str1 + str2.slice(length);\n}\n\nconsole.log(split(\"abcde\", \"cdefgh\"));",
+            "kyu": "7 kyu"
+        },
+        {
+            "id": 24,
+            "link": "https://www.codewars.com/kata/69b58aaee8f1deef7ece7d0e",
+            "name": "Adaptive Security System",
+            "description": "Count how many hackers breach the security. If a hacker is stronger, count a breach. If not, increase security level by increaseGap.",
+            "examples": "hack([7,6,8,9], 6, 2) → 2<br>hack([7,7,8,9], 7, 2) → 1",
+            "myAnswer": "function hack(hackerLvl, securityLvl, increaseGap) {\n    let breachCount = 0;\n    hackerLvl.forEach(hacker => {\n        if (hacker > securityLvl) {\n            breachCount += 1;\n        } else {\n            securityLvl += increaseGap;\n        }\n    });\n    return breachCount;\n}\n\nconsole.log(hack([7, 6, 8, 9], 6, 2));\nconsole.log(hack([7, 7, 8, 9], 7, 2));",
+            "kyu": "7 kyu"
+        },
+        {
+            "id": 25,
+            "link": "https://www.codewars.com/kata/598d91785d4ce3ec4f000018",
+            "name": "Word values",
+            "description": "Calculate sum of letter positions (a=1, b=2, ... z=26) in a string. If input is an array, each element's sum is multiplied by its position (1-indexed). Spaces are ignored.",
+            "examples": "strSum('abc') → 6<br>strSum(['abc', 'abc abc']) → [6, 18]",
+            "myAnswer": "function strSum(s) {\n    if (Array.isArray(s)) {\n        let result = [];\n\n        for (let j = 0; j < s.length; j++) {\n            let currentStr = s[j];\n            let sum = 0;\n\n            for (let i = 0; i < currentStr.length; i++) {\n                if (currentStr[i] !== ' ') {\n                    sum += currentStr.charCodeAt(i) - 96;\n                }\n            }\n            result.push(sum * (j + 1));\n        }\n        return result;\n    } else {\n        let sum = 0;\n        for (let i = 0; i < s.length; i++) {\n            if (s[i] !== ' ') {\n                sum += s.charCodeAt(i) - 96;\n            }\n        }\n        return sum;\n    }\n}\n\nconsole.log(strSum([\"abc\", \"abc abc\"]));",
+            "kyu": "7 kyu"
+        },
+        {
+            "id": 26,
+            "link": "https://www.codewars.com/kata/56743fd3a12043ffbb000049",
+            "name": "She's a Small Wonder",
+            "description": "Teach the robot new words. If the word is a valid letter-only word and not already known, add it and return a thank you message. If already known, return a message that it's already known. If input contains non-letters, return an error message.",
+            "examples": "viki('hello') → 'Thank you for teaching me hello'<br>viki('hello') → 'I already know the word hello'<br>viki('wow!') → 'I do not understand the input'",
+            "myAnswer": "let robot = {};\nfunction viki(input) {\n    let check = /^[a-zA-Zа-яА-ЯёЁ]+$/;\n    if (check.test(input)) {\n        input = input.toLowerCase();\n        if (robot[input] == undefined) {\n            robot[input] = true;\n            return \"Thank you for teaching me \" + input;\n        } else {\n            return \"I already know the word \" + input;\n        }\n    } else {\n        return \"I do not understand the input\";\n    }\n}\n\nconsole.log(viki(\"hello\"));\nconsole.log(viki(\"abc\"));\nconsole.log(viki(\"hello\"));\nconsole.log(viki(\"wow!\"));",
+            "kyu": "6 kyu"
+        },
+        {
+            "id": 27,
+            "link": "https://www.codewars.com/kata/534d2f5b5371ecf8d2000a08",
+            "name": "Multiplication table",
+            "description": "Generate a multiplication table of size n x n.",
+            "examples": "multiply(3) → [[1,2,3],[2,4,6],[3,6,9]]",
+            "myAnswer": "function multiply(value) {\n    let mainArr = [];\n    for (let i = 1; i <= value; i++) {\n        let subArr = [];\n        mainArr.push(subArr);\n        for (let j = 1; j <= value; j++) {\n            subArr.push(i * j);\n        }\n    }\n    return mainArr;\n}\n\nconsole.log(multiply(3));",
+            "kyu": "6 kyu"
+        },
+        {
+            "id": 28,
+            "link": "https://www.codewars.com/kata/58397ee871df657929000209",
+            "name": "Acronym Buster",
+            "description": "Decode acronyms from a whitelist. If an unknown acronym (all caps, length >=3) is found, return an error message. Otherwise, replace known acronyms with their decoded meaning.",
+            "examples": "acronym('BRB sbeu komar') → 'BRB — это акроним. Мне не нравятся акронимы. Пожалуйста, хватит блочить слова про н@ркотики в яндекс музыке'<br>acronym('sbeu komar WFH') → 'sbeu komar work at home'",
+            "myAnswer": "let whiteList = {\n    \"KPI\": \"key performance indicators\",\n    \"EOD\": \"the end of the day\",\n    \"TBD\": \"to be decided\",\n    \"WFH\": \"work at home\",\n    \"IAM\": \"in a meeting\",\n    \"OOO\": \"out of office\",\n    \"NRN\": \"no reply necessary\",\n    \"CTA\": \"call to action\",\n    \"SWOT\": \"strengths, weaknesses, opportunities and threats\"\n};\n\nfunction acronym(text) {\n    let newText = text.split(\" \");\n    for (let i = 0; i < newText.length; i++) {\n        if (newText[i] === newText[i].toUpperCase() && whiteList[newText[i]] && newText[i].length >= 3) {\n            newText[i] = whiteList[newText[i]];\n        } else if ((newText[i] === newText[i].toUpperCase() && whiteList[newText[i]] === undefined && newText[i].length >= 3)) {\n            return newText[i] + \" — это акроним. Мне не нравятся акронимы. Пожалуйста, хватит блочить слова про н@ркотики в яндекс музыке\";\n        }\n    }\n    newText = newText.join(\" \");\n    return newText;\n}\n\nconsole.log(acronym(\"BRB sbeu komar\"));\nconsole.log(acronym(\"sbeu komar WFH\"));",
+            "kyu": "6 kyu"
+        },
+        {
+            "id": 29,
+            "link": "https://www.codewars.com/kata/6904bf406a5bf8ce9fa046df",
+            "name": "City walking tour",
+            "description": "Determine if it's possible to visit all attractions before closing time. Each attraction has coordinates (x,y) and visit time (v). Travel speed is 12 units per minute. Return true if total time ≤ available time, else false.",
+            "examples": "isPossibleToVisitAll([{x:2,y:3,v:30},{x:5,y:7,v:45},{x:1,y:4,v:20}], '0,0', '09:00', '17:00') → false",
+            "myAnswer": "function isPossibleToVisitAll(attractions, hotelCords, startTimeStr, closeTimeStr) {\n    let startTimeMin = startTimeStr.split(\":\");\n    startTimeMin = Number(startTimeMin[0]) * 60 + Number(startTimeMin[1]);\n    let closeTimeMin = closeTimeStr.split(\":\");\n    closeTimeMin = Number(closeTimeMin[0]) * 60 + Number(closeTimeMin[1]);\n    let cords = hotelCords.split(\",\");\n    let hotelX = Number(cords[0]);\n    let hotelY = Number(cords[1]);\n    let distance = 0;\n    let currentX = hotelX;\n    let currentY = hotelY;\n    \n    for (let i = 0; i < attractions.length; i++) {\n        let dx = attractions[i].x - currentX;\n        let dy = attractions[i].y - currentY;\n        distance += Math.sqrt(dx * dx + dy * dy) * 12 + attractions[i].v;\n        currentX = attractions[i].x;\n        currentY = attractions[i].y;\n    }\n    \n    let returnDx = currentX - hotelX;\n    let returnDy = currentY - hotelY;\n    distance += Math.sqrt(returnDx * returnDx + returnDy * returnDy) * 12;\n    \n    let totalTime = distance;\n    let availableTime = closeTimeMin - startTimeMin;\n    \n    return totalTime <= availableTime;\n}\n\nconsole.log(isPossibleToVisitAll([\n    { x: 2, y: 3, v: 30 },\n    { x: 5, y: 7, v: 45 },\n    { x: 1, y: 4, v: 20 }\n], \"0,0\", \"09:00\", \"17:00\"));",
+            "kyu": "6 kyu"
+        },
+        {
+            "id": 30,
+            "link": "https://www.codewars.com/kata/566543703c72200f0b0000c9",
+            "name": "Disease Spread",
+            "description": "Simulate an SIR epidemic model (Susceptible, Infected, Recovered). Calculate the maximum number of infected people during the outbreak. Parameters: tm (days), n (steps), s0 (initial susceptible), i0 (initial infected), b (infection rate), a (recovery rate).",
+            "examples": "epidemic(14, 336, 996, 2, 0.00206, 0.41) → 282",
+            "myAnswer": "function epidemic(tm, n, s0, i0, b, a) {\n    let dt = tm / n;\n    let S = s0;\n    let I = i0;\n    let R = 0;\n    let maxI = I;\n\n    for (let i = 0; i < n; i++) {\n        let newS = S - dt * b * S * I;\n        let newI = I + dt * (b * S * I - a * I);\n        let newR = R + dt * a * I;\n        S = newS;\n        I = newI;\n        R = newR;\n        if (I > maxI) {\n            maxI = I;\n        }\n    }\n    return Math.floor(maxI);\n}\n\nconsole.log(epidemic(14, 336, 996, 2, 0.00206, 0.41));",
+            "kyu": "6 kyu"
         }
     ]
 }
